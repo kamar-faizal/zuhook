@@ -6,7 +6,6 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
     role.associate = function(models) {
         role.hasMany(models.user);
-        role.belongsToMany(models.menuItem, { through: 'menuItemInRoles', foreignKey: 'roleId' });
     };
     return role;
 };
