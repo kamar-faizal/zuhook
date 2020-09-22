@@ -5,16 +5,17 @@ const bcrypt = require("bcrypt");
 var db = require("../models");
 const jwt = require('jsonwebtoken');
 
-router.get("/", auth, function(req, res, next) {
-    try {
-        if (req.userData.roleId === 1) db.user.findAll().then(c => res.json(c));
-        else return res.status(401).json({ message: 'Auth failed. Access denied' });
-    } catch (error) {
-        return res.status(401).json({ message: 'Auth failed. Invalid token.' });
-    }
+router.get("/", function(req, res, next) {
+    // try {
+    //     if (req.userData.roleId === 1) db.user.findAll().then(c => res.json(c));
+    //     else return res.status(401).json({ message: 'Auth failed. Access denied' });
+    // } catch (error) {
+    //     return res.status(401).json({ message: 'Auth failed. Invalid token.' });
+    // }
+    db.user.findAll().then(c => res.json(c));
 });
 
-router.get("/:id", auth, function(req, res, next) {
+router.get("/:id", function(req, res, next) {
     db.user.findOne({ where: { id: req.params.id } }).then(c => res.json(c));
 });
 

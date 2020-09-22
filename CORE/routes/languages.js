@@ -12,7 +12,7 @@ router.get("/active", function(req, res, next) {
 
 router.get("/:id", function(req, res, next) {
     var attributes = ["id", "name", "active", "icon", "iconColor"];
-    db.language.findAll({ attributes, where: { id: req.params.id } }).then(c => res.json(c));
+    db.language.findAll({ where: { id: req.params.id } }).then(c => res.json(c));
 });
 
 router.post("/", function(req, res, next) {

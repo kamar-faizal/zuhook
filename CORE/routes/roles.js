@@ -6,12 +6,8 @@ router.get("/", function(req, res, next) {
     db.role.findAll().then(c => res.json(c));
 });
 
-router.get("/:id/:languageId", function(req, res, next) {
+router.get("/:id", function(req, res, next) {
     db.role.findOne({
-        include: [{
-            model: db.menuItem,
-            where: { languageId: req.params.languageId }
-        }],
         where: { id: req.params.id }
     }).then(c => res.json(c));
 });
