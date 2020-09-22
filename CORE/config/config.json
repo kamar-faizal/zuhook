@@ -1,0 +1,28 @@
+{
+    "development": {
+        "username": "linkinfiniteuser",
+        "password": "p@ssw0rd",
+        "database": "LinkInfinite",
+        "host": "148.72.232.156",
+        "dialect": "mysql",
+        "define": {
+            "timestamps": false
+        }
+    },
+    "test": {
+        "username": "linkinfiniteuser",
+        "password": "p@ssw0rd",
+        "database": "LinkInfinite",
+        "host": "148.72.232.156",
+        "dialect": "mysql",
+        "operatorsAliases": false
+    },
+    "production": {
+        "username": "linkinfiniteuser",
+        "password": "p@ssw0rd",
+        "database": "LinkInfinite",
+        "host": "148.72.232.156",
+        "dialect": "mysql",
+        "operatorsAliases": false
+    }
+}
